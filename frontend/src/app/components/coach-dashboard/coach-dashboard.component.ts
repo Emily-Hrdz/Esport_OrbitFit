@@ -1182,21 +1182,24 @@ export class CoachDashboardComponent implements OnInit {
     const player = this.teamPlayers.find(p => p.name === playerName);
     return player?.position || 'Sin posición';
   }
-
   getRatingButtonClass(rating: number): string {
-    if (rating <= this.trainingResults.rating) {
-      const colorClasses = {
-        1: 'bg-red-500 hover:bg-red-600',
-        2: 'bg-orange-500 hover:bg-orange-600', 
-        3: 'bg-yellow-500 hover:bg-yellow-600',
-        4: 'bg-green-500 hover:bg-green-600',
-        5: 'bg-blue-500 hover:bg-blue-600'
-      };
-      return colorClasses[rating as keyof typeof colorClasses] || 'bg-gray-500';
-    }
-    return 'bg-gray-300 text-gray-600 hover:bg-gray-400';
+  const baseClasses = 'w-10 h-10 rounded-full text-white font-semibold transition duration-200 ';
+  
+  if (rating <= this.trainingResults.rating) {
+    const colorMap = {
+      1: 'bg-red-500 hover:bg-red-600',
+      2: 'bg-orange-500 hover:bg-orange-600',
+      3: 'bg-yellow-500 hover:bg-yellow-600',
+      4: 'bg-green-500 hover:bg-green-600',
+      5: 'bg-blue-500 hover:bg-blue-600'
+    };
+    return baseClasses + (colorMap[rating as keyof typeof colorMap] || 'bg-gray-500');
   }
+  
+  return baseClasses + 'bg-gray-300 text-gray-600 hover:bg-gray-400';
+}
 
+ 
   clearResultsForm() {
     this.selectedTrainingForResults = null;
     this.trainingResults = {
