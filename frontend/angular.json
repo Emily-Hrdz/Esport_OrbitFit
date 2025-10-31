@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/frontend",  
+            "baseHref": "/Esport_OrbitFit/", 
+            "deployUrl": "/Esport_OrbitFit/", 
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -47,12 +50,15 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/Esport_OrbitFit/",
+              "deployUrl": "/Esport_OrbitFit/"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "baseHref": "/"
             }
           },
           "defaultConfiguration": "production"
@@ -87,7 +93,6 @@
                 "input": "public"
               }
             ]
-            
           }
         }
       }
