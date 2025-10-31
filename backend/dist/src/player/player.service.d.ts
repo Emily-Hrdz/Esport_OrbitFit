@@ -4,11 +4,6 @@ export declare class PlayerService {
     private readonly logger;
     constructor(prisma: PrismaService);
     getPlayerTrainings(playerId: number): Promise<({
-        coach: {
-            id: number;
-            firstName: string;
-            lastName: string;
-        };
         participants: ({
             player: {
                 id: number;
@@ -22,6 +17,11 @@ export declare class PlayerService {
             playerId: number;
             trainingId: number;
         })[];
+        coach: {
+            id: number;
+            firstName: string;
+            lastName: string;
+        };
     } & {
         id: number;
         title: string;

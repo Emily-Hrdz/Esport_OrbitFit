@@ -110,10 +110,10 @@ export declare class CoachService {
             id: number;
             playerId: number;
             trainingId: number;
-            endurance: number | null;
-            technique: number | null;
             attitude: number | null;
+            endurance: number | null;
             notes: string | null;
+            technique: number | null;
         })[];
     }>;
     deleteTrainingResults(coachId: number, trainingId: number): Promise<{

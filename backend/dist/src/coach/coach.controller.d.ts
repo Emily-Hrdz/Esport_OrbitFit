@@ -110,10 +110,10 @@ export declare class CoachController {
             id: number;
             playerId: number;
             trainingId: number;
-            endurance: number | null;
-            technique: number | null;
             attitude: number | null;
+            endurance: number | null;
             notes: string | null;
+            technique: number | null;
         })[];
     }>;
     updateTrainingResults(req: any, trainingId: number, resultsData: any): Promise<{

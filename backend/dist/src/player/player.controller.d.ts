@@ -3,11 +3,6 @@ export declare class PlayerController {
     private readonly playerService;
     constructor(playerService: PlayerService);
     getPlayerTrainings(req: any): Promise<({
-        coach: {
-            id: number;
-            firstName: string;
-            lastName: string;
-        };
         participants: ({
             player: {
                 id: number;
@@ -21,6 +16,11 @@ export declare class PlayerController {
             playerId: number;
             trainingId: number;
         })[];
+        coach: {
+            id: number;
+            firstName: string;
+            lastName: string;
+        };
     } & {
         id: number;
         title: string;
