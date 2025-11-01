@@ -46,7 +46,7 @@ export interface TrainingResults {
   providedIn: 'root'
 })
 export class TrainingService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
