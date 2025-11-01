@@ -9,7 +9,6 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'https://emily-hrdz.github.io',
-      'https://amily-hrdz.github.io',
       'http://localhost:4200',
       'http://localhost:3000'
     ],
