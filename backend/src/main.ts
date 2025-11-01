@@ -6,7 +6,18 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
-  app.enableCors();
+  app.enableCors({
+    origin: [
+      'https://emily-hrdz.github.io',
+      'https://amily-hrdz.github.io',
+      'http://localhost:4200',
+      'http://localhost:3000'
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Requested-With']
+  });
+  
   app.useGlobalPipes(new ValidationPipe());
 
   // DEBUG DE RUTAS
